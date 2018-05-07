@@ -3,7 +3,7 @@
 
 #fix save path deeds DONE ZZ
 #update for multiple sections
-#few loops would be better.
+#few loops would be better. or def return fx
 
 
 
@@ -34,14 +34,15 @@ import argparse
 import re
 import os
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.common.keys import Keys
 import pathlib
 import docx
 import re
@@ -446,7 +447,7 @@ if town in Vision:
         print ("page_" + page1)
     else:
         print ('no data')
-        
+    
     #BOOKPAGE2
     if len(driver.find_elements_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[3]/td[4]')) > 0: 
         bp2 = driver.find_element_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[3]/td[4]').text
@@ -503,8 +504,8 @@ if town in Vision:
 
     #BOOKPAGE5
         
-    if len(driver.find_elements_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[5]/td[4]')) > 0: 
-        bp5 = driver.find_element_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[5]/td[4]').text
+    if len(driver.find_elements_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[6]/td[4]')) > 0:    ##fixed 04.26.18
+        bp5 = driver.find_element_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[6]/td[4]').text
         print (bp5)
     else:
         bp5 = "x"
@@ -678,8 +679,8 @@ if town  == "Providence":  #using regular method, can't use it, finds EAST PROVI
 
     #BOOKPAGE5
         
-    if len(driver.find_elements_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[5]/td[4]')) > 0: 
-        bp5 = driver.find_element_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[5]/td[4]').text
+    if len(driver.find_elements_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[6]/td[4]')) > 0: 
+        bp5 = driver.find_element_by_xpath('//*[@id="MainContent_grdSales"]/tbody/tr[6]/td[4]').text
         print (bp5)
     else:
         bp5 = "x"
